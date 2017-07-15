@@ -1,0 +1,53 @@
+h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 28px;
+}
+
+p {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+input {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.msg {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+}
+
+.blah {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 22px;
+  margin: 35px;
+}
+
+#results {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 22px;
+}
+
+.credits {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+}
+
+a:link {
+     text-decoration: none;
+}
+
+a:visited {
+     text-decoration: none;
+}
+
+a:hover {
+     text-decoration: none;
+}
+
+a:active {
+     text-decoration: none;
