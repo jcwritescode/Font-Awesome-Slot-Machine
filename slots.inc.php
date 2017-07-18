@@ -19,5 +19,18 @@ class RandomCreditGenerator {
       }
 
 }
+/*
+Not sure what the best approach is here, I can either create an array and pick a character,
+or just do a string and pick a random char from string
+*/
+class RandomCharGenerator {
 
+  public $exChar;
+  public $chars = array("$", "%", "+", "*", "#", "~", "&");
+
+    public function __construct() {
+      $this->exChar = $this->chars[mt_rand(0, count($this->chars) - 1)];
+      }
+
+}
 ?>

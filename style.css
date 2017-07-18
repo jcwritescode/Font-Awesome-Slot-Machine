@@ -31,10 +31,36 @@ input {
   font-size: 22px;
 }
 
+.instructions {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  margin: 25px 0px;
+}
+
 .credits {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
+}
+
+.important {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  display: inline;
+}
+
+.align {
+  display: inline;
+}
+
+.creditsmsg {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid green;
+  padding: 15px;
 }
 
 a:link {
