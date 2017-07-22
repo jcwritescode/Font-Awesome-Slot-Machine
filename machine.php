@@ -22,7 +22,7 @@ $randomC3 = "&";
     <meta charset="UTF-8">
     <title>ASCII Slot Machine - OOP PHP Project</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:400,500" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500" rel="stylesheet">
   </head>
 
   <body>
@@ -43,17 +43,31 @@ $randomC3 = "&";
     </form>
   </div>
   <!-- Thinking to use Font Awesome animated icons before random chars load -->
+
+  <!-- Hmm, so if I instantiate here, it is available anywhere after? So I should just have it at the top of the doc? -->
+  <?php
+    $charsObjectA1 = new RandomCharGenerator;
+    $charsObjectA2 = new RandomCharGenerator;
+    $charsObjectA3 = new RandomCharGenerator;
+    $charsObjectB1 = new RandomCharGenerator;
+    $charsObjectB2 = new RandomCharGenerator;
+    $charsObjectB3 = new RandomCharGenerator;
+    $charsObjectC1 = new RandomCharGenerator;
+    $charsObjectC2 = new RandomCharGenerator;
+    $charsObjectC3 = new RandomCharGenerator;
+  ?>
+
     <div class="blah">
-      &nbsp;&nbsp;&nbsp;[ = = = ]&nbsp;&nbsp;<span id="results"><a href="#">0</a></span>
-      <br/>&nbsp;&nbsp;&nbsp;[<?php echo " " . $randomA1 . " " . $randomB1 . " " . $randomC1 . " "; ?> ]&nbsp;&nbsp;<span id="results"><a href="#">|</a></span>
-      <span id="results"><br/>> [<?php echo " " . $randomA2 . " " . $randomB2 . " " . $randomC2 . " "; ?></span> ]]]<span id="results"><a href="#">]</a></span>
-      <br/>&nbsp;&nbsp;&nbsp;[<?php echo " " . $randomA3 . " " . $randomB3 . " " . $randomC3 . " "; ?> ]
-      <br/>&nbsp;&nbsp;&nbsp;[ = = = ]
+      &nbsp;[ - - - ]&nbsp;<span id="results"><a href="#">O</a></span>
+      <br/>&nbsp;[<?php echo " " . $charsObjectA1->exChar . " " . $charsObjectA2->exChar . " " . $charsObjectA3->exChar . " "; ?> ]&nbsp;<span id="results"><a href="#">|</a></span>
+      <span id="results"><br/>>[<?php echo $charsObjectA1->luck; ?>]</span>]<span id="results"><a href="#">]</a></span>
+      <br/>&nbsp;[<?php echo " " . $charsObjectC1->exChar . " " . $charsObjectC2->exChar . " " . $charsObjectC3->exChar . " "; ?> ]
+      <br/>&nbsp;[ - - - ]
     </div>
   <?php
-    $charsObject = new RandomCharGenerator;
-    echo "<p><strong>Testing Random Char Gen:</strong></p>";
-    echo $charsObject->exChar;
+    // $charsObject = new RandomCharGenerator;
+    // echo "<p><strong>Testing Random Char Gen:</strong></p>";
+    // echo $charsObject->exChar;
   ?>
   </body>
 
