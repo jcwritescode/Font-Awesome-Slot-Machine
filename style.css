@@ -29,7 +29,15 @@ input {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
   font-size: 22px;
+  border: 1px solid #cccccc;
 }
+
+.handle {
+  font-family: 'Roboto Mono', monospace;
+  font-weight: 500;
+  font-size: 22px;
+}
+
 
 .instructions {
   font-family: 'Roboto', sans-serif;

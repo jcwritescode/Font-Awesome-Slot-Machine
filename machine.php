@@ -46,29 +46,18 @@ $randomC3 = "&";
 
   <!-- Hmm, so if I instantiate here, it is available anywhere after? So I should just have it at the top of the doc? -->
   <?php
-    $charsObjectA1 = new RandomCharGenerator;
-    $charsObjectA2 = new RandomCharGenerator;
-    $charsObjectA3 = new RandomCharGenerator;
-    $charsObjectB1 = new RandomCharGenerator;
-    $charsObjectB2 = new RandomCharGenerator;
-    $charsObjectB3 = new RandomCharGenerator;
-    $charsObjectC1 = new RandomCharGenerator;
-    $charsObjectC2 = new RandomCharGenerator;
-    $charsObjectC3 = new RandomCharGenerator;
+    $charsObject = new RandomCharGenerator;
   ?>
 
     <div class="blah">
-      &nbsp;[ - - - ]&nbsp;<span id="results"><a href="#">O</a></span>
-      <br/>&nbsp;[<?php echo " " . $charsObjectA1->exChar . " " . $charsObjectA2->exChar . " " . $charsObjectA3->exChar . " "; ?> ]&nbsp;<span id="results"><a href="#">|</a></span>
-      <span id="results"><br/>>[<?php echo $charsObjectA1->luck; ?>]</span>]<span id="results"><a href="#">]</a></span>
-      <br/>&nbsp;[<?php echo " " . $charsObjectC1->exChar . " " . $charsObjectC2->exChar . " " . $charsObjectC3->exChar . " "; ?> ]
+      &nbsp;[ - - - ]&nbsp;<span class="handle"><a href="/slots/machine.php">O</a></span>
+      <br/>&nbsp;[<?php echo " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " "; ?> ]&nbsp;<span class="handle"><a href="/slots/machine.php">|</a></span>
+      <br/>><span id="results">[<?php echo $charsObject->luck; ?>]</span>]<span class="handle"><a href="/slots/machine.php">]</a></span>
+      <br/>&nbsp;[<?php echo " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " "; ?> ]
       <br/>&nbsp;[ - - - ]
+      <br/>&nbsp;&nbsp;<div class="important"><?php echo $charsObject->outcome ?></div>
     </div>
-  <?php
-    // $charsObject = new RandomCharGenerator;
-    // echo "<p><strong>Testing Random Char Gen:</strong></p>";
-    // echo $charsObject->exChar;
-  ?>
+
   </body>
 
 </html>
