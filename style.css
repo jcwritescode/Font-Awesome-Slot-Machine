@@ -30,6 +30,7 @@ input {
   font-weight: 500;
   font-size: 22px;
   border: 1px solid #cccccc;
+
 }
 
 .handle {
@@ -63,11 +64,19 @@ input {
   display: inline;
 }
 
-.creditsmsg {
+.win {
   font-family: 'Roboto', sans-serif;
   font-weight: 500;
   font-size: 16px;
   border: 1px solid green;
+  padding: 15px;
+}
+
+.lost {
+  font-family: 'Roboto', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  border: 1px solid #d23d3d;
   padding: 15px;
 }
 

@@ -31,7 +31,7 @@ class RandomCharGenerator {
 
   public function __construct(){
     $this->luck = rand(0,99);
-      if ($this->luck < 19) {
+      if ($this->luck < 21) {
         $this->luck = " " . $this->chars[0] . " " . $this->chars[0] . " " . $this->chars[0] . " ";
         $this->outcome = "YOU WIN!";
       } else {
