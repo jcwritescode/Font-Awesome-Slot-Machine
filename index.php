@@ -1,6 +1,16 @@
 <?php
   require('slots.inc.php');
+    $previousVisit = 0;
+  if (isset($_COOKIE['user'])){
+    $previousVisit = 1;
+  } else {
+  // Trying to create a decently random user number and setting a cookie
+  $userNum = rand(1,9000) + rand(1,9000);
+  setcookie("user", $userNum, time() + (10 * 365 * 24 * 60 * 60));
+}
+
 ?>
+
 
 <!DOCTYPE html>
 <html>
@@ -15,17 +25,8 @@
   <body>
 
 <?php
-  // Is this best practice? Can I have html just output like below? What about the PHP in between?
-  if (!isset($_POST['submit'])):
+if ($previousVisit == 1) {
 ?>
-    <h1>Welcome</h1>
-    <p>Click the button for your starting credits:
-    <br/>
-    <form action="#" method="post">
-    <input type="submit" name="submit" value="Generate Credits">
-    </form>
-    </p>
-<?php else ?>
     <h1>Proof of concept</h1>
 
     <div class="win">
@@ -53,7 +54,18 @@
       <br/>&nbsp;[ - - - ]
     </div>
 
-<?php endif ?>
+<?php } if (!isset($_POST['submit'])) { ?>
+
+    <h1>Welcome</h1>
+    <p>Click the button for your starting credits:
+    <br/>
+    <form action="#" method="post">
+    <input type="submit" name="submit" value="Generate Credits">
+    </form>
+    </p>
+<?php
+    }
+?>
 
   </body>
 
