@@ -4,13 +4,11 @@
   if (isset($_COOKIE['user'])){
     $previousVisit = 1;
   } else {
-  // Trying to create a decently random user number and setting a cookie
+  // Decently random user number and setting a cookie
   $userNum = rand(1,9000) + rand(1,9000);
   setcookie("user", $userNum, time() + (10 * 365 * 24 * 60 * 60));
 }
-
 ?>
-
 
 <!DOCTYPE html>
 <html>
@@ -27,7 +25,7 @@
 <?php
 if ($previousVisit == 1) {
 ?>
-    <h1>Proof of concept</h1>
+    <h1>Slots Machine</h1>
 
     <div class="win">
 
