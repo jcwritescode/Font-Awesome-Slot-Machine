@@ -47,5 +47,29 @@ class RandomCharGenerator {
 
 }
 
+class Db {
+  // Creating the database connection
+  protected static $connection;
+
+  public function connect() {
+    // Trying to connect to the db
+      if (!isset(self::$connection)){
+        // Load config as an array
+        $config = parse_ini_file("/config.ini");
+        self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["dbname"]);
+      }
+      // If connection to db was not successful
+      if (self::$connection === false) {
+        echo "DB Connection Error"; // Need to change this before this goes live
+        return false;
+      }
+      return self::$connection;
+
+  }
+
+
+
+}
+
 
 ?>
