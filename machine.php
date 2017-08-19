@@ -18,7 +18,20 @@ require('slots.inc.php');
 
   <?php
 
-  // Hmm, so if I instantiate here, it is available anywhere after? So I should just have it at the top of the doc? -->
+  // Testing
+    if (isset($_COOKIE['user'])) {
+      $user = $_COOKIE['user'];
+
+      if (isset($_POST['wager'])) {
+        $wager = $_POST['wager'];
+
+        // What is the best way to get stuff from DB and use as string?
+        $databaseObject = new Db;
+        $result = $databaseObject->select("SELECT `credits` FROM `slotsdb` WHERE `userNum` = $user");
+        // Want just credits - best way to get it back?
+      }
+    }
+
     $charsObject = new RandomCharGenerator;
 
     if ($charsObject->outcome == "YOU WIN!") {

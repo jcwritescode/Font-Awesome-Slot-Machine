@@ -56,7 +56,7 @@ class Db {
     // Trying to connect to the db
       if (!isset(self::$connection)){
         // Load config as an array
-        $config = parse_ini_file("/config.ini");
+        $config = parse_ini_file("config.ini");
         self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["dbname"]);
       }
       // If connection to db was not successful
