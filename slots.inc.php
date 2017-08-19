@@ -48,9 +48,10 @@ class RandomCharGenerator {
 }
 
 class Db {
-  // Creating the database connection
+  // Database connection
   protected static $connection;
 
+  // === Connecting to the DB ===
   public function connect() {
     // Trying to connect to the db
       if (!isset(self::$connection)){
@@ -64,10 +65,44 @@ class Db {
         return false;
       }
       return self::$connection;
-
   }
 
+  // === Query the DB ===
+  public function query($query){
+    // Connecting to DB
+    $connection = $this->connect();
 
+    // Query the DB
+    $result = $connection->query($query);
+
+    return $result;
+  }
+
+  // === Fetch rows from the DB (SELECT query) ===
+  public function select($query){
+    $rows = array();
+    $result = $this->query($query);
+
+    if ($result === false) {
+      return false;
+    }
+    while ($row = $result->fetch_assoc()) {
+      $rows[] = $row;
+    }
+    return $rows;
+  }
+
+  // === Fetch last error from DB ===
+  public function error() {
+    $connection = $this->connect();
+    return $connection->error;
+  }
+
+  // === Quote and escape value for use in a DB query ===
+  public function quote($value) {
+      $connection = $this->connect();
+      return "'" . $connection->real_escape_string($value) . "'";
+  }
 
 }
 

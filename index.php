@@ -23,17 +23,20 @@
  <body>
 
 <?php
-if ($visit == 1 || isset($_COOKIE["user"])) {
+  if ($visit == 1 || isset($_COOKIE["user"])) {
 ?>
     <h1>Testing</h1>
 
 
 <?php
-if (isset($_POST['submit'])) {
-  echo '<div class="win">';
-  $slotsObject = new RandomCreditGenerator;
-  echo "Congrats, you have won " . $slotsObject->credits . " Credits to start with!";
-  // Log to DB
+  if (isset($_POST['submit'])) {
+    echo '<div class="win">';
+    $slotsObject = new RandomCreditGenerator;
+    echo "Congrats, you have won " . $slotsObject->credits . " Credits to start with!";
+
+    $databaseObject = new Db;
+    // Log to DB
+    $databaseObject->query("INSERT INTO `slotsdb` (`credits`, `userNum`) VALUES ($slotsObject->credits,$userNum)");
 }
 
 ?>
