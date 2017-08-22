@@ -8,9 +8,10 @@ $charsObject = new RandomCharGenerator;
 
  <head>
     <meta charset="UTF-8">
-    <title>ASCII Slot Machine - OOP PHP Project</title>
+    <title>Font Awesome Slot Machine - OOP PHP Project</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
     <script type="text/javascript">
          function submitform() {
@@ -21,7 +22,7 @@ $charsObject = new RandomCharGenerator;
 
  <body>
 
-   <h1>Proof of concept</h1>
+   <h1>Font Awesome Slot Machine</h1>
 
     <div class="msg">How many Credits would you like to wager?
       <form id="wager" action="#" method="post">
@@ -30,11 +31,11 @@ $charsObject = new RandomCharGenerator;
   <!-- Thinking to use Font Awesome animated icons before random chars load -->
 
    <div class="blah">
-      &nbsp;[ - - - ]&nbsp;<span class="handle"><a href="javascript: submitform()">O</a></span>
-      <br/>&nbsp;[<?php echo " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " "; ?> ]&nbsp;<span class="handle"><a href="javascript: submitform()">|</a></span>
+      &nbsp;[<i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i>]&nbsp;<span class="handle"><a href="javascript: submitform()">O</a></span>
+      <br/>&nbsp;[<?php echo $charsObject->randomizer() . $charsObject->randomizer() . $charsObject->randomizer(); ?>]&nbsp;<span class="handle"><a href="javascript: submitform()">|</a></span>
       <br/>><span id="results">[<?php echo $charsObject->luck; ?>]</span>]<span class="handle"><a href="javascript: submitform()">]</a></span>
-      <br/>&nbsp;[<?php echo " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " " . $charsObject->randomizer() . " "; ?> ]
-      <br/>&nbsp;[ - - - ]
+      <br/>&nbsp;[<?php echo $charsObject->randomizer() . $charsObject->randomizer() . $charsObject->randomizer(); ?>]
+      <br/>&nbsp;[<i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i>]
     </div>
 
   </form>

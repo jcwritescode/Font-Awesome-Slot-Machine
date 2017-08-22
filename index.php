@@ -14,9 +14,10 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>ASCII Slot Machine - OOP PHP Project</title>
+    <title>Font Awesome Slot Machine - OOP PHP Project</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500|Roboto:400,500" rel="stylesheet">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
 
    <script type="text/javascript">
         function submitform() {
@@ -31,7 +32,7 @@
 <?php
   if ($visit == 1 || isset($_COOKIE["user"])) {
 ?>
-    <h1>ASCII Slots</h1>
+    <h1>Font Awesome Slot Machine</h1>
 
 
 <?php
@@ -54,11 +55,11 @@
           <input type="text" size="20" name="wager"><span class="credits"> Credits</span>
 
   <div class="blah">
-      &nbsp;[ - - - ]&nbsp;<span class="handle"><a href="javascript: submitform()">O</a></span>
-      <br/>&nbsp;[&nbsp;$&nbsp;#&nbsp;@&nbsp;]<span class="handle"><a href="javascript: submitform()">&nbsp;|</a></span>
-      <br/>><span id="results">[&nbsp;*&nbsp;+&nbsp;$&nbsp;]</span>]<span class="handle"><a href="javascript: submitform()">]</a></span>
-      <br/>&nbsp;[&nbsp;@&nbsp;*&nbsp;+&nbsp;]
-      <br/>&nbsp;[ - - - ]
+      &nbsp;[<i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i>]&nbsp;<span class="handle"><a href="javascript: submitform()">O</a> <-Pull Handle</span>
+      <br/>&nbsp;[<i class="fa fa-usd fa-fw"></i><i class="fa fa-umbrella fa-fw"></i><i class="fa fa-anchor fa-fw"></i>]<span class="handle"><a href="javascript: submitform()">&nbsp;|</a></span>
+      <br/>><span id="results">[<i class="fa fa-usd faa-flash animated fa-fw"></i><i class="fa fa-usd faa-flash animated fa-fw"></i><i class="fa fa-usd faa-flash animated fa-fw"></i>]</span>]<span class="handle"><a href="javascript: submitform()">]</a></span>
+      <br/>&nbsp;[<i class="fa fa-cubes fa-fw"></i><i class="fa fa-paper-plane fa-fw"></i><i class="fa fa-thumbs-o-up fa-fw"></i>]
+      <br/>&nbsp;[<i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i><i class="fa fa-align-justify fa-fw"></i>]
     </div>
 
      </form>

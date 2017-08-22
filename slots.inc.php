@@ -7,7 +7,7 @@ class RandomCreditGenerator {
 
     public function __construct() {
       // random_int() does not work, so had to use rand() - maybe not using PHP 7?
-      $this->credits = rand(200, 2500);
+      $this->credits = rand(2500, 5500);
         /*
         Damn, this is a cool trick - this guarantees that credits will be an increment of 50
         People on the internet say this is faster than doing a while loop
@@ -25,23 +25,23 @@ or just do a string and pick a random char from string
 */
 class RandomCharGenerator {
 
-  public $chars = array("$", "%", "+", "*", "#", "~", "&", "@");
+  public $chars = array('<i class="fa fa-usd faa-flash animated fa-fw"></i>', '<i class="fa fa-usd fa-fw"></i>', '<i class="fa fa-bath fa-fw"></i>', '<i class="fa fa-car fa-fw"></i>', '<i class="fa fa-thumbs-o-up fa-fw"></i>', '<i class="fa fa-umbrella fa-fw"></i>', '<i class="fa fa-paper-plane fa-fw"></i>', '<i class="fa fa-anchor fa-fw"></i>', '<i class="fa fa-star fa-fw"></i>', '<i class="fa fa-cubes fa-fw"></i>', '<i class="fa fa-glass fa-fw"></i>', '<i class="fa fa-gamepad fa-fw"></i>');
   public $luck;
   public $outcome = "You Have Lost";
 
   public function __construct(){
     $this->luck = rand(0,99);
       if ($this->luck < 19) {
-        $this->luck = " " . $this->chars[0] . " " . $this->chars[0] . " " . $this->chars[0] . " ";
+        $this->luck = $this->chars[0] . $this->chars[0] . $this->chars[0];
         $this->outcome = "YOU WIN!";
       } else {
         // This looks wrong - is this ok?
-        $this->luck = " " . $this->randomizer() . " " . $this->randomizer() . " " . $this->randomizer() . " ";
+        $this->luck = $this->randomizer() . $this->randomizer() . $this->randomizer();
       }
   }
 
     public function randomizer(){
-      $randChar = $this->chars[mt_rand(0, count($this->chars) - 1)];
+      $randChar = $this->chars[mt_rand(1, count($this->chars) - 1)];
       return $randChar;
     }
 
@@ -56,7 +56,7 @@ class Db {
     // Trying to connect to the db
       if (!isset(self::$connection)){
         // Load config as an array
-        $config = parse_ini_file("/config.ini");
+        $config = parse_ini_file("config.ini");
         self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["dbname"]);
       }
       // If connection to db was not successful
