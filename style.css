@@ -21,14 +21,14 @@ input {
 .blah {
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
-  font-size: 22px;
+  font-size: 30px;
   margin: 35px;
 }
 
 #results {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 30px;
   border: 1px solid #cccccc;
 
 }
@@ -36,7 +36,7 @@ input {
 .handle {
   font-family: 'Roboto Mono', monospace;
   font-weight: 500;
-  font-size: 22px;
+  font-size: 30px;
 }
 
 

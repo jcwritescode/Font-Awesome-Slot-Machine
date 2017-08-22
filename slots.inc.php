@@ -31,7 +31,7 @@ class RandomCharGenerator {
 
   public function __construct(){
     $this->luck = rand(0,99);
-      if ($this->luck < 21) {
+      if ($this->luck < 19) {
         $this->luck = " " . $this->chars[0] . " " . $this->chars[0] . " " . $this->chars[0] . " ";
         $this->outcome = "YOU WIN!";
       } else {
@@ -56,7 +56,7 @@ class Db {
     // Trying to connect to the db
       if (!isset(self::$connection)){
         // Load config as an array
-        $config = parse_ini_file("config.ini");
+        $config = parse_ini_file("/config.ini");
         self::$connection = new mysqli("localhost", $config["username"], $config["password"], $config["dbname"]);
       }
       // If connection to db was not successful
@@ -80,14 +80,13 @@ class Db {
 
   // === Fetch rows from the DB (SELECT query) ===
   public function select($query){
-    $rows = array();
     $result = $this->query($query);
 
     if ($result === false) {
       return false;
     }
     while ($row = $result->fetch_assoc()) {
-      $rows[] = $row;
+      $rows = $row;
     }
     return $rows;
   }
