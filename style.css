@@ -1,6 +1,129 @@
+.timeline-small {
+  max-width: 600px;
+  overflow: hidden;
+  margin: 10px auto 0;
+  box-shadow: 0 0 40px #a0a0a0;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.header {
+  background: url(machine.jpg);
+  background-size: cover;
+  color: #fff;
+  position: relative;
+}
+
+.color-overlay {
+  padding: 2em 2em;
+  box-sizing: border-box;
+  background: rgba(0, 86, 144, 0.58);
+}
+
+.header-name {
+  font-size: 1.6em;
+}
+
+.header-sub {
+  text-transform: uppercase;
+  font-weight: 300;
+  font-size: 0.6em;
+  letter-spacing: 2px;
+  margin-top: 2px;
+}
+
+.timeline-small-body ul {
+  padding: 1em 0 0 2em;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+.timeline-small-body ul::before {
+  content: ' ';
+  height: 100%;
+  width: 5px;
+  background-color: #d9d9d9;
+  position: absolute;
+  top: 0;
+  left: 2.4em;
+  z-index: -1;
+}
+.timeline-small-body li div {
+  display: inline-block;
+  margin: 1em 0;
+  vertical-align: top;
+}
+.timeline-small-body .bullet {
+  width: 1rem;
+  height: 1rem;
+  box-sizing: border-box;
+  border-radius: 50%;
+  background: #fff;
+  z-index: 1;
+  margin-right: 1rem;
+  margin-top: 7%;
+}
+.timeline-small-body .bullet.pink {
+  background-color: hotpink;
+  border: 3px solid #F93B69;
+}
+.timeline-small-body .bullet.green {
+  background-color: lightseagreen;
+  border: 3px solid #B0E8E2;
+}
+.timeline-small-body .bullet.blue {
+  background-color: aquamarine;
+  border: 3px solid cadetblue;
+}
+.timeline-small-body .bullet.orange {
+  background-color: salmon;
+  border: 3px solid #EB8B6E;
+}
+.timeline-small-body .date {
+  width: 23%;
+  font-size: 0.75em;
+  padding-top: 0.40rem;
+  padding-right: 2rem;
+}
+.timeline-small-body .desc {
+  width: 50%;
+}
+.inner {
+  margin: 25px;
+  line-height: 1.3em;
+}
+
+.timeline-small-body h3 {
+  font-size: 0.9em;
+  font-weight: 400;
+  margin: 0;
+}
+.timeline-small-body h4 {
+  margin: 0;
+  font-size: 0.7em;
+  font-weight: 400;
+  color: #808080;
+}
+.button1 {
+  -webkit-border-radius: 5;
+  -moz-border-radius: 5;
+  border-radius: 5px;
+  color: #ffffff;
+  font-size: 18px;
+  background: #4d96c7;
+  padding: 10px 20px 10px 20px;
+  text-decoration: none;
+}
+
+.button1:hover {
+  background: #3cb0fd;
+  text-decoration: none;
+}
+
 h1 {
   font-family: 'Roboto', sans-serif;
   font-size: 28px;
+  line-height: 1.5;
+  border-bottom: 1px solid;
 }
 
 p {
@@ -16,13 +139,16 @@ input {
 .msg {
   font-family: 'Roboto', sans-serif;
   font-size: 16px;
+  padding-bottom: 10px;
 }
 
-.blah {
+.slotmachine {
   font-family: 'Roboto Mono', monospace;
   font-weight: 400;
   font-size: 30px;
-  margin: 35px;
+  margin: auto;
+  width: 50%;
+  padding: 10px 0px;
 }
 
 #results {
@@ -44,7 +170,6 @@ input {
   font-family: 'Roboto', sans-serif;
   font-weight: 400;
   font-size: 16px;
-  margin: 25px 0px;
 }
 
 .credits {
@@ -69,7 +194,7 @@ input {
   font-weight: 500;
   font-size: 16px;
   border: 1px solid green;
-  padding: 15px;
+  padding: 10px;
 }
 
 .lost {
@@ -77,7 +202,7 @@ input {
   font-weight: 500;
   font-size: 16px;
   border: 1px solid #d23d3d;
-  padding: 15px;
+  padding: 10px;
 }
 
 a:link {
