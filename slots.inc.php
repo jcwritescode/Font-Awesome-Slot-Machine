@@ -44,21 +44,25 @@ class RandomCreditGenerator {
 
 class RandomCharGenerator {
 
-  public $chars = array('<i class="fa fa-usd faa-flash animated fa-fw"></i>', '<i class="fa fa-diamond faa-flash animated  fa-fw"></i>', '<i class="fa fa-thumbs-o-up faa-flash animated fa-fw"></i>', '<i class="fa fa-usd fa-fw"></i>', '<i class="fa fa-bath fa-fw"></i>', '<i class="fa fa-car fa-fw"></i>', '<i class="fa fa-thumbs-o-up fa-fw"></i>', '<i class="fa fa-umbrella fa-fw"></i>', '<i class="fa fa-paper-plane fa-fw"></i>', '<i class="fa fa-anchor fa-fw"></i>', '<i class="fa fa-star fa-fw"></i>', '<i class="fa fa-cubes fa-fw"></i>', '<i class="fa fa-glass fa-fw"></i>', '<i class="fa fa-gamepad fa-fw"></i>', '<i class="fa fa-diamond fa-fw"></i>', '<i class="fa fa-fighter-jet fa-fw"></i>');
+  public $chars = array('<i class="fa fa-usd faa-flash animated fa-fw"></i>', '<i class="fa fa-diamond faa-flash animated  fa-fw"></i>', '<i class="fa fa-thumbs-o-up faa-flash animated fa-fw"></i>', '<i class="fa fa-money faa-flash animated fa-fw"></i>', '<i class="fa fa-times faa-fade1 animated fa-fw"></i>', '<i class="fa fa-usd faa-fade1 animated fa-fw"></i>', '<i class="fa fa-bath faa-fade1 animated fa-fw"></i>', '<i class="fa fa-car faa-fade2 animated fa-fw"></i>', '<i class="fa fa-thumbs-o-up faa-fade3 animated fa-fw"></i>', '<i class="fa fa-umbrella faa-fade1 animated fa-fw"></i>', '<i class="fa fa-paper-plane faa-fade2 animated fa-fw"></i>', '<i class="fa fa-anchor faa-fade3 animated fa-fw"></i>', '<i class="fa fa-star faa-fade1 animated fa-fw"></i>', '<i class="fa fa-cubes faa-fade2 animated fa-fw"></i>', '<i class="fa fa-glass faa-fade3 animated fa-fw"></i>', '<i class="fa fa-gamepad faa-fade1 animated fa-fw"></i>', '<i class="fa fa-diamond faa-fade2 animated fa-fw"></i>', '<i class="fa fa-fighter-jet faa-fade3 animated fa-fw"></i>');
   public $luck;
-  public $outcome = "You Have Lost";
+  public $noPull = '<i class="fa fa-times  fa-fw"></i><i class="fa fa-times  fa-fw"></i><i class="fa fa-times  fa-fw"></i>';
+  public $outcome = 0;
 
   public function __construct(){
     $this->luck = rand(0,99);
       if ($this->luck < 1):
         $this->luck = $this->chars[0] . $this->chars[0] . $this->chars[0];
-        $this->outcome = "win";
+        $this->outcome = 4;
       elseif ($this->luck > 1 && $this->luck < 21):
+        $this->luck = $this->chars[3] . $this->chars[3] . $this->chars[3];
+        $this->outcome = 2;
+      elseif ($this->luck > 21 && $this->luck < 40):
         $this->luck = $this->chars[1] . $this->chars[1] . $this->chars[1];
-        $this->outcome = "wager";
-      elseif ($this->luck > 21 && $this->luck < 27):
+        $this->outcome = 3;
+      elseif ($this->luck > 40 && $this->luck < 48):
         $this->luck = $this->chars[2] . $this->chars[2] . $this->chars[2];
-        $this->outcome = "one";
+        $this->outcome = 1;
       else:
         // This looks wrong - is this ok?
         $this->luck = $this->randomizer() . $this->randomizer() . $this->randomizer();
@@ -66,7 +70,7 @@ class RandomCharGenerator {
   }
 
     public function randomizer(){
-      $randChar = $this->chars[mt_rand(3, count($this->chars) - 1)];
+      $randChar = $this->chars[mt_rand(5, count($this->chars) - 1)];
       return $randChar;
     }
 
@@ -125,7 +129,7 @@ class Db {
   // === Quote and escape value for use in a DB query ===
   public function quote($value) {
       $connection = $this->connect();
-      return "'" . $connection->real_escape_string($value) . "'";
+      return $connection->real_escape_string($value);
   }
 
 }
